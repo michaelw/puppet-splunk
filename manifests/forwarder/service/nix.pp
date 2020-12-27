@@ -4,7 +4,7 @@
 #
 class splunk::forwarder::service::nix inherits splunk::forwarder::service {
   if $splunk::forwarder::boot_start {
-    $accept_tos_user = 'root'
+    $accept_tos_user = $splunk::forwarder::splunk_user
     $accept_tos_require = Exec['enable_splunkforwarder']
     # Ensure splunk services *not* managed by the system service file are
     # gracefully shut down prior to enabling boot-start. Should the service
