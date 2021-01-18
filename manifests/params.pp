@@ -364,6 +364,11 @@ class splunk::params (
       $forwarder_package_name  = 'splunkforwarder'
       $enterprise_package_name = 'splunk'
     }
+    /^Debian arm/: {
+      $package_suffix          = "${version}-${build}-linux-2.6-arm.deb"
+      $forwarder_package_name  = 'splunkforwarder'
+      $enterprise_package_name = 'splunk'
+    }
     /^(W|w)indows (x86|i386)$/: {
       $package_suffix          = "${version}-${build}-x86-release.msi"
       $forwarder_package_name  = 'UniversalForwarder'
